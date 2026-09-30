@@ -1,0 +1,160 @@
+Here are beginner-friendly notes on nested lists in Python.
+
+What is a nested list?
+- A nested list is a list that contains other lists.
+- It is also called a 2D list.
+- It is useful when storing rows, tables, groups, or related data together.
+
+Example:
+```python
+students = [
+    ["Alice", 20, "A"],
+    ["Bob", 22, "B"],
+    ["Charlie", 21, "A+"]
+]
+```
+
+This means:
+- `students` is a list
+- each item inside it is another list
+- each inner list stores one student’s data
+
+How to access items
+- `students[0]` gives the first inner list
+- `students[1][0]` gives the first item of the second inner list
+
+Example:
+```python
+print(students[0])      # ['Alice', 20, 'A']
+print(students[0][0])   # Alice
+print(students[1][1])   # 22
+```
+
+Why nested lists are useful
+- Store table-like data
+- Represent rows and columns
+- Work with student marks, exam results, matrix values, etc.
+
+Example: matrix
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrix[1][2])   # 6
+```
+
+How to loop through nested lists
+```python
+for row in students:
+    print(row)
+```
+
+Output:
+```python
+['Alice', 20, 'A']
+['Bob', 22, 'B']
+['Charlie', 21, 'A+']
+```
+
+You can also loop deeper:
+```python
+for row in students:
+    for item in row:
+        print(item)
+```
+
+Practical example: student marks
+```python
+students = [
+    ["Alice", [80, 90, 85]],
+    ["Bob", [70, 75, 80]],
+    ["Charlie", [90, 95, 88]]
+]
+
+for name, marks in students:
+    average = sum(marks) / len(marks)
+    print(f"{name}: Average = {average}")
+```
+
+Output:
+```python
+Alice: Average = 85.0
+Bob: Average = 75.0
+Charlie: Average = 91.0
+```
+
+How to update nested list values
+```python
+students[0][1] = 21
+print(students)
+```
+
+Example:
+```python
+students = [
+    ["Alice", 20],
+    ["Bob", 22]
+]
+
+students[1][1] = 23
+print(students)
+```
+
+Output:
+```python
+[['Alice', 20], ['Bob', 23]]
+```
+
+Adding values to nested lists
+```python
+students.append(["Diana", 19])
+print(students)
+```
+
+Nested list with a list of subjects
+```python
+marks = [
+    ["Math", 90],
+    ["Science", 85],
+    ["English", 80]
+]
+
+for subject, score in marks:
+    print(subject, score)
+```
+
+Common beginner mistake
+- Confusing `students[0]` and `students[0][0]`
+- `students[0]` gives whole list
+- `students[0][0]` gives first item inside that list
+
+Mini summary
+- Nested list = list inside a list
+- Used for grouped data
+- Access with indexes
+- Loop with nested loops
+- Good for tables, matrices, records, and marks
+
+Quick practice exercise
+Create a nested list for 3 students, each with name and 3 marks. Then calculate and print each student’s average.
+
+Solution:
+```python
+students = [
+    ["Alice", [80, 85, 90]],
+    ["Bob", [70, 75, 80]],
+    ["Charlie", [90, 95, 88]]
+]
+
+for name, marks in students:
+    average = sum(marks) / len(marks)
+    print(f"{name} average = {average}")
+```
+
+If you want, I can also give you:
+- a short exam-style note version
+- a simple classroom explanation
+- a worksheet with practice questions and answers
